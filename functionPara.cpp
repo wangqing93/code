@@ -14,7 +14,7 @@ void changeVPoint(int* a)
 void changeV(int &a)
 {
     cout << a << endl;
-    a++;  //地址++每次加4
+    a++;  
     cout << a << endl;
 }
 int main()
