@@ -1,0 +1,17 @@
+var a = 2;
+(function foo(){
+    var a = 3;
+    document.writeln("(function)："+a); //3
+    // foo()  recycle
+})();
+
+document.writeln("global: " +a); //2
+
+function foo() {
+    a = 4;   //var a , global no change
+    document.writeln("foo: " +a); //4
+}
+
+foo();
+
+document.writeln("global: " +a); //4
