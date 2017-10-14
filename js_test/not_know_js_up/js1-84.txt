@@ -1,0 +1,29 @@
+/* example1
+function foo() {
+    document.writeln(this.a);
+}
+var a = 0;
+
+foo();
+*/
+
+/* example2
+function foo() {
+    "use strict";
+    document.writeln(this.a); //type error
+}
+var a = 0;
+
+foo();
+*/
+
+//example3
+function foo() {
+    document.writeln(this.a); //type error
+}
+var a = 0;
+
+(function(){
+    "use strict";
+    foo();
+})();

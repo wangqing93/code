@@ -1,0 +1,19 @@
+function identify() {
+    return this.name.toUpperCase();
+}
+function speak() {
+    var greeting = "hello, i'm " +identify.call(this);
+    return greeting;
+}
+var me ={
+    name: "Wang"
+};
+
+var you = {
+    name:"Xue"
+};
+
+document.writeln(identify.call(me));
+document.writeln(identify.call(you));
+document.writeln(speak.call(you));
+document.writeln("test");

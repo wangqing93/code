@@ -1,0 +1,13 @@
+for (var i = 0; i < 10; i++)
+    document.writeln(i);
+
+document.writeln(i);
+
+try {
+    undefined();
+} catch(err) {
+    document.writeln(err);
+}
+
+document.writeln(err); // error: err is not defined
+
