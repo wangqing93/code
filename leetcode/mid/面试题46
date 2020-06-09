@@ -1,0 +1,30 @@
+class Solution {
+public:
+    int count = 0;
+    unordered_map<string, string> rules;
+    int translateNum(int num) {
+        //backtracking
+        for (int i = 0; i < 26; i++) {
+            rules.insert(make_pair(to_string(i), to_string('a'+i)));
+        }
+        backtracking(to_string(num),"");
+        return count;
+    }
+
+
+    void backtracking(string numW, string strW){
+        if (numW.length() == 0) {
+            count++;
+            return;
+        }
+        if (numW.length() > 1) {
+            if (numW.substr(0,2) <= "25" && numW[0]!='0')  {
+                strW = strW + rules[numW.substr(0,2)];
+                backtracking(numW.substr(2, numW.length()-2), strW);
+                strW = strW.substr(0, numW.length()-2);
+            }
+        }
+        strW = strW + rules[numW.substr(0,1)];
+        backtracking(numW.substr(1, numW.length()-1), strW);
+    }
+};
