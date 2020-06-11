@@ -1,0 +1,25 @@
+class Solution {
+public:
+    void merge(vector<int>& A, int m, vector<int>& B, int n) {
+        vector<int> res;
+        int i = 0, j = 0;
+        while (i < m && j < n) {
+            if (A[i] < B[j]) {
+                res.push_back(A[i]);
+                i++;
+            } else {
+                res.push_back(B[j]);
+                j++;
+            }   
+        }
+
+            for (j; j < n; j++)
+                res.push_back(B[j]);
+
+
+            for (i; i < m; i++)
+                res.push_back(A[i]);
+
+        A.assign(res.begin(), res.end());
+    }
+};
